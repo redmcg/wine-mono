@@ -47,7 +47,8 @@ clean-build-mono-$(1):
 clean-build: clean-build-mono-$(1)
 
 # BTLS
-$$(BUILDDIR)/btls-$(1)/Makefile: $$(SRCDIR)/mono/mono/btls/CMakeLists.txt $$(MINGW_DEPS)
+$$(BUILDDIR)/btls-$(1)/Makefile: $$(SRCDIR)/mono/mono/btls/CMakeLists.txt $$(SRCDIR)/mono.make $$(MINGW_DEPS)
+	$(RM_F) $$(@D)/CMakeCache.txt
 	mkdir -p $$(@D)
 	# wincrypt.h interferes with boringssl definitions, so we prevent its inclusion
 	cd $$(@D); $$(MINGW_ENV) cmake -DCMAKE_TOOLCHAIN_FILE="$$(SRCDIR_ABS)/toolchain-$(1).cmake" -DCMAKE_C_COMPILER=$$(MINGW_$(1))-gcc -DCMAKE_C_FLAGS='-D__WINCRYPT_H__ -D_WIN32_WINNT=0x0600 -static-libgcc' -DCMAKE_CXX_COMPILER=$$(MINGW_$(1))-g++ -DOPENSSL_NO_ASM=1 -DBTLS_ROOT="$$(SRCDIR_ABS)/mono/external/boringssl" -DBUILD_SHARED_LIBS=1 $$(SRCDIR_ABS)/mono/mono/btls
@@ -88,8 +89,16 @@ tests-runtime-$(1): $$(BUILDDIR)/mono-unix/mono/mini/.built-tests $$(BUILDDIR)/m
 	cp $$(BUILDDIR)/mono-unix/mono/tests/assembly-load-dir1/Lib*.dll $$(TESTS_OUTDIR)/tests-$(1)/assembly-load-dir1
 	mkdir -p $$(TESTS_OUTDIR)/tests-$(1)/assembly-load-dir2
 	cp $$(BUILDDIR)/mono-unix/mono/tests/assembly-load-dir2/*.dll $$(TESTS_OUTDIR)/tests-$(1)/assembly-load-dir2
-	if test $(1) = x86; then cd $$(TESTS_OUTDIR)/tests-$(1); $$(WINE) $$(BUILDDIR_ABS)/set32only.exe *.exe; fi
+ifeq ($(1),x86)
+	cp $$(BUILDDIR)/mono-unix/builtin-types-32.exe $$(TESTS_OUTDIR)/tests-$(1)/builtin-types.exe
+	cd $$(TESTS_OUTDIR)/tests-$(1); $$(WINE) $$(BUILDDIR_ABS)/set32only.exe *.exe
+endif
+
 tests: tests-runtime-$(1)
+
+ifeq ($(1),x86)
+tests-runtime-$(1): $$(BUILDDIR)/mono-unix/builtin-types-32.exe
+endif
 
 endef
 
@@ -180,6 +189,9 @@ $(BUILDDIR)/mono-unix/mono/tests/.built: $(BUILDDIR)/mono-unix/.built
 $(BUILDDIR)/mono-unix/mono/mini/.built-tests: $(BUILDDIR)/mono-unix/.built
 	+$(MAKE) -C $(@D) test-local
 	touch $@
+
+$(BUILDDIR)/mono-unix/builtin-types-32.exe: $(SRCDIR)/mono/mono/mini/builtin-types.cs $(BUILDDIR)/mono-unix/mono/mini/.built-tests $(BUILDDIR)/mono-unix/.installed
+	$(MONO_ENV) mcs -out:$@ -unsafe -define:ARCH_32 $< -r:$(BUILDDIR)/mono-unix/mono/mini/TestDriver.dll
 
 tests-clr: $(BUILDDIR)/mono-unix/.built-clr-tests $(BUILDDIR)/nunitlite.dll $(BUILDDIR)/set32only.exe
 	mkdir -p $(TESTS_OUTDIR)/tests-clr

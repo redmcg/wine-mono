@@ -27,7 +27,7 @@ ENABLE_DEBUG_SYMBOLS=0
 
 -include user-config.make
 
-MSI_VERSION=5.0.99
+MSI_VERSION=5.1.99
 
 # variables
 SRCDIR_ABS=$(shell cd $(SRCDIR); pwd)
@@ -44,14 +44,15 @@ MONO_ENV=PATH="$(MONO_BIN_PATH):$$PATH" LD_LIBRARY_PATH="$(MONO_LD_PATH):$$LD_LI
 MINGW_ENV=$(and $(MINGW_PATH),PATH=$(MINGW_PATH):$$PATH)
 
 CP_R=python $(SRCDIR_ABS)/tools/copy_recursive.py
+RM_F=rm -f
 
 # dependency checks
 ifeq (,$(shell which $(WINE)))
 $(error '$(WINE)' command not found. Please install wine or specify its location in the WINE variable)
 endif
 
-all: image targz msi tests
-.PHONY: all clean imagedir-targets tests
+all: image targz msi tests tests-zip
+.PHONY: all clean imagedir-targets tests tests-zip
 
 define HELP_TEXT =
 The following targets are defined:
@@ -137,7 +138,7 @@ $(eval $(call MINGW_TEMPLATE,x86))
 $(eval $(call MINGW_TEMPLATE,x86_64))
 
 $(BUILDDIR)/set32only.exe: $(SRCDIR)/tools/set32only/set32only.c $(MINGW_DEPS)
-	$(MINGW_ENV) $(MINGW_x86_64)-gcc -municode -Wall $^ -o $@
+	$(MINGW_ENV) $(MINGW_x86_64)-gcc -municode -Wall $< -o $@
 
 clean-build-set32only:
 	rm -rf $(BUILDDIR)/set32only.exe
@@ -162,6 +163,17 @@ clean-tests-runtestsexe:
 	rm -rf $(TESTS_OUTDIR)/run-tests.exe $(TESTS_OUTDIR)/*.txt $(TESTS_OUTDIR)/run-on-windows.bat
 .PHONY: clean-tests-runtestsexe
 clean-tests: clean-tests-runtestsexe
+
+$(OUTDIR)/wine-mono-$(MSI_VERSION)-tests.zip: tests
+	rm -f wine-mono-$(MSI_VERSION)-tests.zip
+	do_zip () { if which 7z; then 7z a "$$@"; elif which zip; then zip -r "$$@"; else exit 1; fi; }; cd $(OUTDIR); do_zip wine-mono-$(MSI_VERSION)-tests.zip tests/
+
+tests-zip: $(OUTDIR)/wine-mono-$(MSI_VERSION)-tests.zip
+
+clean-tests-zip:
+	rm -rf $(OUTDIR)/wine-mono-$(MSI_VERSION)-tests.zip
+.PHONY: clean-tests-zip
+clean: clean-tests-zip
 
 $(BUILDDIR)/resx2srid.exe: $(SRCDIR)/tools/resx2srid/resx2srid.cs $(BUILDDIR)/mono-unix/.installed
 	$(MONO_ENV) csc $(SRCDIR)/tools/resx2srid/resx2srid.cs -out:$(BUILDDIR)/resx2srid.exe
@@ -230,6 +242,12 @@ $(OUTDIR)/wine-mono-$(MSI_VERSION)-x86.msi: $(BUILDDIR)/.runtimemsitables-built
 	$(WINE) winemsibuilder -i '$(shell $(WINE) winepath -w $@)' $(BUILDDIR)/msi-tables/runtime/*.idt
 	$(WINE) winemsibuilder -a '$(shell $(WINE) winepath -w $@)' image.cab '$(shell $(WINE) winepath -w $(BUILDDIR)/image.cab)'
 
+clean-image-cab:
+	rm -f $(BUILDDIR)/image.cab
+	rm -f $(BUILDDIR)/.runtimemsitables-built
+.PHONY: clean-image-cab
+clean-build: clean-image-cab
+
 msi: $(OUTDIR)/wine-mono-$(MSI_VERSION)-x86.msi
 .PHONY: msi
 
@@ -248,7 +266,7 @@ targz: bin
 .PHONY: targz
 
 clean-targz:
-	rm -f $(OUTDIR)/wine-mono-$(MSI_VERSION)-x86.tar.gz
+	rm -f $(OUTDIR)/wine-mono-$(MSI_VERSION)-x86.tar.$(COMPRESSED_SUFFIX)
 .PHONY: clean-targz
 clean: clean-targz
 
@@ -259,6 +277,11 @@ $(OUTDIR)/wine-mono-$(MSI_VERSION)-src.tar.$(COMPRESSED_SUFFIX): $(BUILDDIR)/mon
 
 source: $(OUTDIR)/wine-mono-$(MSI_VERSION)-src.tar.$(COMPRESSED_SUFFIX)
 .PHONY: source
+
+clean-source:
+	rm -f $(OUTDIR)/wine-mono-$(MSI_VERSION)-src.tar.$(COMPRESSED_SUFFIX)
+.PHONY: clean-source
+clean: clean-source
 
 print-env:
 	@echo $(MONO_ENV)

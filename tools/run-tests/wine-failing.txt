@@ -1,15 +1,6 @@
 monitor:test_0_enter_abort_race # wine takes too long to start the bg thread for this test
-pinvoke3:test_0_marshal_small_struct_delegate8
-pinvoke3:test_0_marshal_small_struct_delegate9
-x86.builtin-types:test_0_nint_compareto
-x86.builtin-types:test_0_nint_equals
-x86.builtin-types:test_0_nint_genequals
-x86.builtin-types:test_0_nint_tostring
-x86.builtin-types:test_0_nint_fieldload
-x86.builtin-types:test_0_nuint_compareto
-x86.builtin-types:test_0_nuint_equals
-x86.builtin-types:test_0_nuint_fieldload
-x86.builtin-types:test_0_nfloat_ctor
+x86.pinvoke3:test_0_marshal_small_struct_delegate8
+x86.pinvoke3:test_0_marshal_small_struct_delegate9
 x86.MonoTests.System.ActivatorTest:Unification_FromFx99_System
 x86.MonoTests.System.AppDomainTest:ExecuteAssembly4_NoEntryPoint
 x86.MonoTests.System.Collections.Generic.DictionaryTest:Clear_ZeroOut
@@ -36,8 +27,6 @@ x86.MonoTests.System.Reflection.Emit.AssemblyBuilderTest:TestDefineDynamicModule
 x86.MonoTests.System.Reflection.Emit.AssemblyBuilderTest:TestDefineUnmanagedResource1_ResourceAlreadyDefined
 x86.MonoTests.System.Reflection.Emit.ConstructorOnTypeBuilderInstTest:Attributes
 x86.MonoTests.System.Reflection.Emit.ConstructorOnTypeBuilderInstTest:CallingConvention
-x86.MonoTests.System.Reflection.Emit.DynamicMethodTest
-x86.MonoTests.System.Reflection.Emit.DynamicMethodTest
 x86.MonoTests.System.Reflection.Emit.EnumBuilderTest:TestEnumBuilderGUIDComplete
 x86.MonoTests.System.Reflection.Emit.ILGeneratorTest:Emit10_Labels_Null_MS
 x86.MonoTests.System.Reflection.Emit.ILGeneratorTest:Emit3_Constructor_Null_MS
@@ -285,7 +274,6 @@ x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Warp_Invalid
 x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Warp_NoPoints
 x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Warp_Rectangle_Empty
 x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Warp_Rectangle_NegativeWidthHeight
-x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Widen_Pen_SmallWidth
 x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Wrap_Line
 x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Wrap_NoPoint
 x86.MonoTests.System.Drawing.Drawing2D.GraphicsPathTest:Wrap_SinglePoint
@@ -299,12 +287,6 @@ x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:RotateTransform_Max
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:RotateTransform_Min
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Transform_NonInvertible
 x86.MonoTests.System.Drawing.FontFamilyTest:FontFamily_String_PrivateFontCollection
-x86.MonoTests.System.Drawing.GDIPlusTest
-x86.MonoTests.System.Drawing.GDIPlusTest
-x86.MonoTests.System.Drawing.GraphicsFullTrustTest:GetReleaseHdc
-x86.MonoTests.System.Drawing.GraphicsFullTrustTest
-x86.MonoTests.System.Drawing.GraphicsTest
-x86.MonoTests.System.Drawing.GraphicsTest:GetReleaseHdcInternal
 x86.MonoTests.System.Drawing.GraphicsTest:MeasureCharacterRanges_FirstTooFar
 x86.MonoTests.System.Drawing.GraphicsTest:MeasureCharacterRanges_LengthTooLong
 x86.MonoTests.System.Drawing.GraphicsTest:MeasureCharacterRanges_StringFormat_Alignment_DirectionVertical
@@ -318,7 +300,6 @@ x86.MonoTests.System.Drawing.GraphicsTest:Save
 x86.MonoTests.System.Drawing.GraphicsTest:ScaleTransform_X0
 x86.MonoTests.System.Drawing.GraphicsTest:ScaleTransform_Y0
 x86.MonoTests.System.Drawing.GraphicsTest:SetSaveReset
-x86.MonoTests.System.Drawing.GraphicsTest:TestReleaseHdc
 x86.MonoTests.System.Drawing.GraphicsTest:Transform_NonInvertibleMatrix
 x86.MonoTests.System.Drawing.ImageTest:FromFile_Invalid
 x86.MonoTests.System.Drawing.ImageTest:FromFile_Metafile_Emf
@@ -327,7 +308,6 @@ x86.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Emf
 x86.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Emf_NotOrigin
 x86.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Wmf
 x86.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Wmf_NotOrigin
-x86.MonoTests.System.Drawing.ImageTest:GetThumbnailImage_Smaller_Gif
 x86.MonoTests.System.Drawing.ImageTest:StreamJunkSaveLoad
 x86.MonoTests.System.Drawing.Imaging.BmpCodecTest:Save_32bppArgb
 x86.MonoTests.System.Drawing.Imaging.BmpCodecTest:Save_32bppPArgb
@@ -351,7 +331,6 @@ x86.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:GifCodec
 x86.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:IconCodec_Decoder
 x86.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:TiffCodec
 x86.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:WmfCodec_Decoder
-x86.MonoTests.System.Drawing.Imaging.JpegCodecTest:Bitmap24bitFeatures
 x86.MonoTests.System.Drawing.Imaging.MetafileFulltrustTest:CreateFilename_MultipleGraphics_EmfOnly
 x86.MonoTests.System.Drawing.Imaging.MetafileFulltrustTest:CreateFilename_MultipleGraphics_EmfPlusDual
 x86.MonoTests.System.Drawing.Imaging.MetafileFulltrustTest:CreateFilename_MultipleGraphics_EmfPlusOnly
@@ -419,7 +398,6 @@ x86.MonoTests.System.Drawing.TestBitmap:SetResolution_NaN
 x86.MonoTests.System.Drawing.TestBitmap:SetResolution_NegativeInfinity
 x86.MonoTests.System.Drawing.TestBitmap:SetResolution_Negative_X
 x86.MonoTests.System.Drawing.TestBitmap:SetResolution_Negative_Y
-x86.MonoTests.System.Drawing.TestBitmap:SoapSerialize_Bitmap8
 x86.MonoTests.System.Drawing.TestRegion:GetHrgn_Null
 x86.MonoTests.System.Drawing.TestRegion:Intersect_383878
 x86.MonoTests.System.Drawing.TestRegion:IsVisible_IntIntIntIntNull
@@ -575,19 +553,13 @@ x86.MonoTests.System.Resources.ResXFileRefConverterTest:ConvertFrom_Type_NotSet
 x86.MonoTests.System.Resources.ResXResourceReaderTest:ExternalFileReference_RelativePath
 x86.MonoTests.System.Windows.Forms.ButtonInheritorTest:Constructor
 x86.MonoTests.System.Windows.Forms.ButtonInheritorTest:CreateAccessibilityInstanceTest
-x86.MonoTests.System.Windows.Forms.ButtonTest:BehaviorAutoSize
 x86.MonoTests.System.Windows.Forms.ColumnHeaderTest:ImageIndex_Invalid
-x86.MonoTests.System.Windows.Forms.ComboBoxTest:BehaviorAutoSize
 x86.MonoTests.System.Windows.Forms.ComboBoxTest:DropDownWidth
 x86.MonoTests.System.Windows.Forms.ComboBoxTest:ItemHeight
 x86.MonoTests.System.Windows.Forms.ComboBoxTest:SelectionWithAdd
 x86.MonoTests.System.Windows.Forms.ComboBoxTest:SelectionWithInsert
-x86.MonoTests.System.Windows.Forms.ControlTest:FontTest
 x86.MonoTests.System.Windows.Forms.ControlTest:FontTest_Names
-x86.MonoTests.System.Windows.Forms.ControlTest:ResetFontTest
 x86.MonoTests.System.Windows.Forms.CursorTest:CursorPropertyTag
-x86.MonoTests.System.Windows.Forms.DataGridTableStyleTest:TestBackColorChangedEvent
-x86.MonoTests.System.Windows.Forms.DataGridTableStyleTest:TestForeColorChangedEvent
 x86.MonoTests.System.Windows.Forms.DataGridTextBoxTest:TestKeyPress_GridButNoColumns
 x86.MonoTests.System.Windows.Forms.DataGridViewLinkCellTest:Defaults
 x86.MonoTests.System.Windows.Forms.DataGridViewRowHeaderTest:MethodGetErrorIconBounds
@@ -601,7 +573,6 @@ x86.MonoTests.System.Windows.Forms.FocusTest:ActiveControl_NoChild
 x86.MonoTests.System.Windows.Forms.FormTest:FormPropertyTest
 x86.MonoTests.System.Windows.Forms.GroupBoxTest:AutoSize
 x86.MonoTests.System.Windows.Forms.InputLanguageTest:Test
-x86.MonoTests.System.Windows.Forms.LabelTest:PubPropTest
 x86.MonoTests.System.Windows.Forms.Layout.TableLayoutSettingsTypeConverterTest:ConvertTo_CurrentCultureHasComma
 x86.MonoTests.System.Windows.Forms.Layout.TableLayoutSettingsTypeConverterTest:ConvertTo_Loop_CurrentCultureWithComma_CultureWithComma
 x86.MonoTests.System.Windows.Forms.ListBindingHelperTest:GetListItemPropertiesTest2
@@ -623,7 +594,6 @@ x86.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:AddRangeSel
 x86.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:InsertSelectedItem
 x86.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:RemoveSelectedItem
 x86.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:SelectBeforeCreationOfHandle
-x86.MonoTests.System.Windows.Forms.ListViewSubItemTest:Constructor1
 x86.MonoTests.System.Windows.Forms.ListViewSubItemTest:SerializeExact_MS
 x86.MonoTests.System.Windows.Forms.ListViewSubItemTest:SerializeExact_Mono
 x86.MonoTests.System.Windows.Forms.ListViewTest
@@ -741,7 +711,6 @@ x86.MonoTests.System.Net.Sockets.SocketTest:SendBufferSizeChange
 x86.MonoTests.System.Net.Sockets.SocketTest:SendTimeoutChange
 x86.MonoTests.System.Net.Sockets.SocketTest:SetSocketOption_MulticastInterfaceIndex_Loopback
 x86.MonoTests.System.Net.Sockets.UdpClientTest:ExclusiveAddressUseUnbound
-x86.MonoTests.System.Net.Sockets.UdpClientTest:JoinMulticastGroup2_Socket_NotBound
 x86.MonoTests.System.Net.WebSockets.ClientWebSocketTest:ServerHandshakeReturnCrapStatusCodeTest
 x86.MonoTests.System.Security.Cryptography.X509Certificates.X509Cert20Test:Export_Pfx
 x86.MonoTests.System.Security.Cryptography.X509Certificates.X509Cert20Test:Export_Pkcs12
@@ -777,8 +746,6 @@ x86_64.MonoTests.System.Reflection.Emit.AssemblyBuilderTest:TestDefineDynamicMod
 x86_64.MonoTests.System.Reflection.Emit.AssemblyBuilderTest:TestDefineUnmanagedResource1_ResourceAlreadyDefined
 x86_64.MonoTests.System.Reflection.Emit.ConstructorOnTypeBuilderInstTest:Attributes
 x86_64.MonoTests.System.Reflection.Emit.ConstructorOnTypeBuilderInstTest:CallingConvention
-x86_64.MonoTests.System.Reflection.Emit.DynamicMethodTest
-x86_64.MonoTests.System.Reflection.Emit.DynamicMethodTest
 x86_64.MonoTests.System.Reflection.Emit.EnumBuilderTest:TestEnumBuilderGUIDComplete
 x86_64.MonoTests.System.Reflection.Emit.ILGeneratorTest:Emit10_Labels_Null_MS
 x86_64.MonoTests.System.Reflection.Emit.ILGeneratorTest:Emit3_Constructor_Null_MS
@@ -1039,10 +1006,6 @@ x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:RotateTransform_
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:RotateTransform_Min
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Transform_NonInvertible
 x86_64.MonoTests.System.Drawing.FontFamilyTest:FontFamily_String_PrivateFontCollection
-x86_64.MonoTests.System.Drawing.GDIPlusTest
-x86_64.MonoTests.System.Drawing.GDIPlusTest
-x86_64.MonoTests.System.Drawing.GraphicsFullTrustTest:GetReleaseHdc
-x86_64.MonoTests.System.Drawing.GraphicsFullTrustTest
 x86_64.MonoTests.System.Drawing.GraphicsTest:BeginContainer
 x86_64.MonoTests.System.Drawing.GraphicsTest:BeginContainer_Rect
 x86_64.MonoTests.System.Drawing.GraphicsTest:BeginContainer_RectF
@@ -1062,7 +1025,6 @@ x86_64.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGr
 x86_64.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_Millimeter
 x86_64.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_Point
 x86_64.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_World
-x86_64.MonoTests.System.Drawing.GraphicsTest:GetReleaseHdcInternal
 x86_64.MonoTests.System.Drawing.GraphicsTest:MeasureCharacterRanges_FirstTooFar
 x86_64.MonoTests.System.Drawing.GraphicsTest:MeasureCharacterRanges_LengthTooLong
 x86_64.MonoTests.System.Drawing.GraphicsTest:MeasureCharacterRanges_StringFormat_Alignment_DirectionVertical
@@ -1076,7 +1038,6 @@ x86_64.MonoTests.System.Drawing.GraphicsTest:Save
 x86_64.MonoTests.System.Drawing.GraphicsTest:ScaleTransform_X0
 x86_64.MonoTests.System.Drawing.GraphicsTest:ScaleTransform_Y0
 x86_64.MonoTests.System.Drawing.GraphicsTest:SetSaveReset
-x86_64.MonoTests.System.Drawing.GraphicsTest:TestReleaseHdc
 x86_64.MonoTests.System.Drawing.GraphicsTest:Transform_NonInvertibleMatrix
 x86_64.MonoTests.System.Drawing.ImageTest:FromFile_Invalid
 x86_64.MonoTests.System.Drawing.ImageTest:FromFile_Metafile_Emf
@@ -1085,7 +1046,6 @@ x86_64.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Emf
 x86_64.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Emf_NotOrigin
 x86_64.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Wmf
 x86_64.MonoTests.System.Drawing.ImageTest:FromStream_Metafile_Wmf_NotOrigin
-x86_64.MonoTests.System.Drawing.ImageTest:GetThumbnailImage_Smaller_Gif
 x86_64.MonoTests.System.Drawing.ImageTest:StreamJunkSaveLoad
 x86_64.MonoTests.System.Drawing.Imaging.BmpCodecTest:Save_32bppArgb
 x86_64.MonoTests.System.Drawing.Imaging.BmpCodecTest:Save_32bppPArgb
@@ -1109,7 +1069,6 @@ x86_64.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:GifCodec
 x86_64.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:IconCodec_Decoder
 x86_64.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:TiffCodec
 x86_64.MonoTests.System.Drawing.Imaging.ImageCodecInfoTest:WmfCodec_Decoder
-x86_64.MonoTests.System.Drawing.Imaging.JpegCodecTest:Bitmap24bitFeatures
 x86_64.MonoTests.System.Drawing.Imaging.MetafileFulltrustTest:CreateFilename_MultipleGraphics_EmfOnly
 x86_64.MonoTests.System.Drawing.Imaging.MetafileFulltrustTest:CreateFilename_MultipleGraphics_EmfPlusDual
 x86_64.MonoTests.System.Drawing.Imaging.MetafileFulltrustTest:CreateFilename_MultipleGraphics_EmfPlusOnly
@@ -1177,7 +1136,6 @@ x86_64.MonoTests.System.Drawing.TestBitmap:SetResolution_NaN
 x86_64.MonoTests.System.Drawing.TestBitmap:SetResolution_NegativeInfinity
 x86_64.MonoTests.System.Drawing.TestBitmap:SetResolution_Negative_X
 x86_64.MonoTests.System.Drawing.TestBitmap:SetResolution_Negative_Y
-x86_64.MonoTests.System.Drawing.TestBitmap:SoapSerialize_Bitmap8
 x86_64.MonoTests.System.Drawing.TestRegion:GetHrgn_Null
 x86_64.MonoTests.System.Drawing.TestRegion:Intersect_383878
 x86_64.MonoTests.System.Drawing.TestRegion:IsVisible_IntIntIntIntNull
@@ -1333,19 +1291,13 @@ x86_64.MonoTests.System.Resources.ResXFileRefConverterTest:ConvertFrom_Type_NotS
 x86_64.MonoTests.System.Resources.ResXResourceReaderTest:ExternalFileReference_RelativePath
 x86_64.MonoTests.System.Windows.Forms.ButtonInheritorTest:Constructor
 x86_64.MonoTests.System.Windows.Forms.ButtonInheritorTest:CreateAccessibilityInstanceTest
-x86_64.MonoTests.System.Windows.Forms.ButtonTest:BehaviorAutoSize
 x86_64.MonoTests.System.Windows.Forms.ColumnHeaderTest:ImageIndex_Invalid
-x86_64.MonoTests.System.Windows.Forms.ComboBoxTest:BehaviorAutoSize
 x86_64.MonoTests.System.Windows.Forms.ComboBoxTest:DropDownWidth
 x86_64.MonoTests.System.Windows.Forms.ComboBoxTest:ItemHeight
 x86_64.MonoTests.System.Windows.Forms.ComboBoxTest:SelectionWithAdd
 x86_64.MonoTests.System.Windows.Forms.ComboBoxTest:SelectionWithInsert
-x86_64.MonoTests.System.Windows.Forms.ControlTest:FontTest
 x86_64.MonoTests.System.Windows.Forms.ControlTest:FontTest_Names
-x86_64.MonoTests.System.Windows.Forms.ControlTest:ResetFontTest
 x86_64.MonoTests.System.Windows.Forms.CursorTest:CursorPropertyTag
-x86_64.MonoTests.System.Windows.Forms.DataGridTableStyleTest:TestBackColorChangedEvent
-x86_64.MonoTests.System.Windows.Forms.DataGridTableStyleTest:TestForeColorChangedEvent
 x86_64.MonoTests.System.Windows.Forms.DataGridTextBoxTest:TestKeyPress_GridButNoColumns
 x86_64.MonoTests.System.Windows.Forms.DataGridViewLinkCellTest:Defaults
 x86_64.MonoTests.System.Windows.Forms.DataGridViewRowHeaderTest:MethodGetErrorIconBounds
@@ -1359,7 +1311,6 @@ x86_64.MonoTests.System.Windows.Forms.FocusTest:ActiveControl_NoChild
 x86_64.MonoTests.System.Windows.Forms.FormTest:FormPropertyTest
 x86_64.MonoTests.System.Windows.Forms.GroupBoxTest:AutoSize
 x86_64.MonoTests.System.Windows.Forms.InputLanguageTest:Test
-x86_64.MonoTests.System.Windows.Forms.LabelTest:PubPropTest
 x86_64.MonoTests.System.Windows.Forms.Layout.TableLayoutSettingsTypeConverterTest:ConvertTo_CurrentCultureHasComma
 x86_64.MonoTests.System.Windows.Forms.Layout.TableLayoutSettingsTypeConverterTest:ConvertTo_Loop_CurrentCultureWithComma_CultureWithComma
 x86_64.MonoTests.System.Windows.Forms.ListBindingHelperTest:GetListItemPropertiesTest2
@@ -1381,7 +1332,6 @@ x86_64.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:AddRange
 x86_64.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:InsertSelectedItem
 x86_64.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:RemoveSelectedItem
 x86_64.MonoTests.System.Windows.Forms.ListViewSelectedIndexChangedEvent:SelectBeforeCreationOfHandle
-x86_64.MonoTests.System.Windows.Forms.ListViewSubItemTest:Constructor1
 x86_64.MonoTests.System.Windows.Forms.ListViewSubItemTest:SerializeExact_MS
 x86_64.MonoTests.System.Windows.Forms.ListViewSubItemTest:SerializeExact_Mono
 x86_64.MonoTests.System.Windows.Forms.ListViewTest
@@ -1503,7 +1453,6 @@ x86_64.MonoTests.System.Net.Sockets.SocketTest:SendBufferSizeChange
 x86_64.MonoTests.System.Net.Sockets.SocketTest:SendTimeoutChange
 x86_64.MonoTests.System.Net.Sockets.SocketTest:SetSocketOption_MulticastInterfaceIndex_Loopback
 x86_64.MonoTests.System.Net.Sockets.UdpClientTest:ExclusiveAddressUseUnbound
-x86_64.MonoTests.System.Net.Sockets.UdpClientTest:JoinMulticastGroup2_Socket_NotBound
 x86_64.MonoTests.System.Net.WebSockets.ClientWebSocketTest:ServerHandshakeReturnCrapStatusCodeTest
 x86_64.MonoTests.System.Security.Cryptography.X509Certificates.X509Cert20Test:Export_Pfx
 x86_64.MonoTests.System.Security.Cryptography.X509Certificates.X509Cert20Test:Export_Pkcs12
@@ -1607,8 +1556,52 @@ x86_64.MonoTests.System.Net.Http.HttpClientTest:Send_Content_Put
 x86_64.MonoTests.System.Net.Http.HttpClientTest:Send_Content_Put_CustomStream
 x86_64.MonoTests.System.Net.Http.HttpClientTest:Send_Transfer_Encoding_Chunked
 webbrowsertest
-x86.MonoTests.System.IO.Pipes.PipeSecurityTest #NamedPipePermissionsActuallyWorkAsync crashes - https://github.com/madewokherd/wine-mono/issues/62
 arraypadding
+MonoTests.System.IO.Pipes.PipeSecurityTest:NamedPipePermissionsActuallyWorkAsync
+MonoTests.System.Drawing.GDIPlusTest:CreatePen
+MonoTests.System.Drawing.GDIPlusTest:CreateRegionRgnData
+MonoTests.System.Drawing.GDIPlusTest:DrawingOperations
+MonoTests.System.Drawing.GDIPlusTest:Encoder
+MonoTests.System.Drawing.GDIPlusTest:Format16bppGrayScale_GetSetPixel
+MonoTests.System.Drawing.GDIPlusTest:GdipCreateBitmapFromFile_FileNotFound
+MonoTests.System.Drawing.GDIPlusTest:GdipLoadImageFromFile_FileNotFound
+MonoTests.System.Drawing.GDIPlusTest:GetImageThumbnail
+MonoTests.System.Drawing.GDIPlusTest:GetPointCount_Zero
+MonoTests.System.Drawing.GDIPlusTest:GraphicsPathIterator
+MonoTests.System.Drawing.GDIPlusTest:GraphicsPathIterator_WithoutPath
+MonoTests.System.Drawing.GDIPlusTest:Matrix3
+MonoTests.System.Drawing.GDIPlusTest:MetafileAsImage_InImageAPI
+MonoTests.System.Drawing.GDIPlusTest:Metafile_GetMetafileHeaderFromFile
+MonoTests.System.Drawing.GDIPlusTest:Metafile_Hemf
+MonoTests.System.Drawing.GDIPlusTest:Metafile_InImageAPI
+MonoTests.System.Drawing.GDIPlusTest:RecordMetafileFileName
+MonoTests.System.Drawing.GDIPlusTest:StringFormat
+MonoTests.System.Drawing.GDIPlusTest:Texture
+MonoTests.System.Drawing.GDIPlusTest:Texture2
+MonoTests.System.Drawing.GDIPlusTest:TextureIA
+MonoTests.System.Drawing.GDIPlusTest:Unlock
+x86.MonoTests.System.Drawing.GraphicsTest:BeginContainer
+x86.MonoTests.System.Drawing.GraphicsTest:BeginContainer_Rect
+x86.MonoTests.System.Drawing.GraphicsTest:BeginContainer_RectF
+x86.MonoTests.System.Drawing.GraphicsTest:ClipBounds_Transform_Scale_Strange
+x86.MonoTests.System.Drawing.GraphicsTest:Clip_MultiplyTransform_NoBoundsChange
+x86.MonoTests.System.Drawing.GraphicsTest:Clip_RotateTransform_BoundsChange_45
+x86.MonoTests.System.Drawing.GraphicsTest:Clip_TranslateTransform
+x86.MonoTests.System.Drawing.GraphicsTest:DefaultProperties
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageFloatFloat_Overflow
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageIntInt_Overflow
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImagePoint4RectangleGraphicsUnit
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImagePointArray
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImagePointFArray
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_Display
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_Document
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_Inch
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_Millimeter
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_Point
+x86.MonoTests.System.Drawing.GraphicsTest:DrawImage_ImageRectangleRectangleGraphicsUnit_World
+MonoTests.System.Windows.Forms.ListBoxTest:HeightAndIntegralHeight
+MonoTests.System.Reflection.Emit.DynamicMethodTest:InvalidUnicodeName
+WineMono.Tests.System.Windows.Media.TextFormatting.TextFormatterTest:SingleWordTahomaTest
 # definitely unreliable:
 delegate2
 x86_64.MonoTests.System.Threading.ThreadLocalTests:DisposeOnThreadExit
@@ -1627,3 +1620,4 @@ MonoTests.System.Windows.Forms.ComboBoxTests:SelectedText
 MonoTests.System.Windows.Forms.ComboBoxTests:SortedSelectedItem
 x86.MonoTests.System.TimeZoneTest:ToLocalTimeAtDSTBoundaries
 MonoTests.System.Threading.Tasks.TaskSchedulerTests:UnobservedTaskExceptionOnFinalizerThreadTest
+MonoTests.System.Windows.Forms.FormTest:DestroyHandleTest

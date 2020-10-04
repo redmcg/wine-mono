@@ -67,10 +67,9 @@ x86.pinvoke11
 pinvoke2:test_0_fixed_buffer_char
 pinvoke2:test_0_amd64_struct1_gen
 x86.pinvoke3:test_0_marshal_return_string_array_delegate
-x86_64.pinvoke3:test_0_marshal_inout_byval_class_delegate
 x86.pinvoke_ppcc
-pinvoke_ppcd
-pinvoke_ppcf
+x86.pinvoke_ppcd
+x86.pinvoke_ppcf
 x86.pinvoke_ppcs
 process-unref-race
 recursive-generics.2
@@ -93,7 +92,6 @@ bug-3903
 install_eh_callback:test_0_throw_and_raise_exception
 install_eh_callback
 x86_64.calli_native
-x86_64.pinvoke2:test_0_x86_single_double_struct_ret
 marshal9:test_0_pass_ref
 x86.array_load_exception:test_0_generic_box
 x86.pinvoke2:test_0_marshal_out_class
@@ -455,7 +453,6 @@ x86.MonoTests.System.AppDomainTest:DefineDynamicAssembly9_Name_InvalidChars
 x86.MonoTests.System.AppDomainTest:DefineDynamicAssembly9_Name_Null
 x86.MonoTests.System.AppDomainTest:GenericReflectionObjectsAreSerializableTest
 x86.MonoTests.System.AppDomainTest:Load_Loaded_Multiple
-x86.MonoTests.System.AppDomainTest:Load_Manifest_Mismatch
 x86.MonoTests.System.AppDomainTest:Load_PartialVersion
 x86.MonoTests.System.AppDomainTest:ReflectionObjectsAreSerializableTest
 x86.MonoTests.System.AppDomainTest:SetAppDomainPolicy
@@ -1411,8 +1408,6 @@ x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_PointF_
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_PointF_WrapMode_Tile
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_PointF_WrapMode_TileFlipX
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_PointF_WrapMode_TileFlipY
-x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_Two
-x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_Clamp
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_Tile
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_TileFlipX
 x86.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_TileFlipXY
@@ -3600,7 +3595,6 @@ x86_64.MonoTests.System.AppDomainTest:DefineDynamicAssembly9_Name_InvalidChars
 x86_64.MonoTests.System.AppDomainTest:DefineDynamicAssembly9_Name_Null
 x86_64.MonoTests.System.AppDomainTest:GenericReflectionObjectsAreSerializableTest
 x86_64.MonoTests.System.AppDomainTest:Load_Loaded_Multiple
-x86_64.MonoTests.System.AppDomainTest:Load_Manifest_Mismatch
 x86_64.MonoTests.System.AppDomainTest:Load_PartialVersion
 x86_64.MonoTests.System.AppDomainTest:ReflectionObjectsAreSerializableTest
 x86_64.MonoTests.System.AppDomainTest:SetAppDomainPolicy
@@ -3821,7 +3815,6 @@ x86_64.MonoTests.System.Reflection.Emit.TypeBuilderTest:TestSetParentIncomplete
 x86_64.MonoTests.System.Reflection.FieldInfoTest:CustomFieldInfo
 x86_64.MonoTests.System.Reflection.FieldInfoTest:GetFieldFromHandle2_Handle_GenericDefinition
 x86_64.MonoTests.System.Resources.ResourceManagerTest:TestSatellites
-x86_64.MonoTests.System.Runtime.CompilerServices.ConditionalWeakTableTest
 x86_64.MonoTests.System.Runtime.CompilerServices.MethodImplAttributeTest:CtorTest
 x86_64.MonoTests.System.Runtime.CompilerServices.MethodImplAttributeTest:FieldsTest
 x86_64.MonoTests.System.Runtime.CompilerServices.MethodImplAttributeTest:MatchTestForFalse
@@ -4563,8 +4556,6 @@ x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Poin
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_PointF_WrapMode_Tile
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_PointF_WrapMode_TileFlipX
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_PointF_WrapMode_TileFlipY
-x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_Two
-x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_Clamp
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_Tile
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_TileFlipX
 x86_64.MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_TileFlipXY
@@ -6637,10 +6628,11 @@ x86_64.MonoTests.System.UriTest:PathDotTrim
 x86_64.MonoTests.System.UriTest:QueryEscape
 x86_64.MonoTests.System.UriTest:UserInfo_EscapedLetter
 MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Clone
-MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_GraphicsPath_Line
+x86_64.MonoTests.System.Runtime.CompilerServices.ConditionalWeakTableTest:ConditionalWeakTableEnumerable
+MonoTests.System.Transactions.TransactionScopeTest:TransactionScopeTimeout
 # unreliable:
 x86.thread-exit
-x86.MonoTests.System.Threading.Tasks.TaskTests:DoubleWaitTest
+MonoTests.System.Threading.Tasks.TaskTests:DoubleWaitTest
 MonoTests.System.Drawing.GDIPlusTest:CreateFont
 MonoTests.System.IO.IsolatedStorageTest.IsolatedStorageFileTest:Remove
 MonoTests.System.IO.IsolatedStorageTest.IsolatedStorageFileTest:RemoveFromOtherInstance
@@ -6663,3 +6655,7 @@ MonoTests.System.AppDomainTest:Load_Loaded_Ignore
 MonoTests.System.Reflection.Emit.AssemblyBuilderTest:AssemblyName_MoreCultureInfo
 MonoTests.System.Reflection.Emit.AssemblyBuilderTest:AssemblyName_PublicKey
 MonoTests.System.Reflection.Emit.AssemblyBuilderTest:StrongName_WithoutAttributes
+MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_Two
+MonoTests.System.AppDomainTest:Load_Manifest_Mismatch
+MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_GraphicsPath_Line
+MonoTests.System.Drawing.Drawing2D.PathGradientBrushTest:Constructor_Point_WrapMode_Clamp

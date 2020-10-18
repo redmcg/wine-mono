@@ -1,6 +1,6 @@
 [submodule "mono"]
 	path = mono
-	url = git://github.com/madewokherd/mono.git
+	url = git://github.com/redmcg/mono.git
 [submodule "mono-basic"]
 	path = mono-basic
 	url = git://github.com/madewokherd/mono-basic.git
@@ -21,4 +21,4 @@
 	url = git://github.com/madewokherd/winforms-datavisualization.git
 [submodule "wpf"]
 	path = wpf
-	url = git://github.com/madewokherd/wpf.git
+	url = git://github.com/redmcg/wpf.git

@@ -1,6 +1,6 @@
 [submodule "mono"]
 	path = mono
-	url = git://github.com/madewokherd/mono.git
+	url = https://github.com/redmcg/mono.git
 [submodule "mono-basic"]
 	path = mono-basic
 	url = git://github.com/madewokherd/mono-basic.git
